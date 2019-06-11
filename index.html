@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Профессиональная техника для обжарщиков кофе</title>
   <link rel="stylesheet" type="text/css" href="main.css" />
+  <link rel="stylesheet" type="text/css" href="message.css" />
   <script>
 window.onload = function() {
   var button = document.getElementById('toggle-menu');
@@ -13,6 +14,21 @@ window.onload = function() {
     event.preventDefault();
     var menu = document.getElementById('main-menu');
     menu.classList.toggle('is-open');
+  });
+
+  // Сообщение-заглушка
+  var anchors = document.getElementsByTagName('a');
+  var message = document.getElementById('message');
+  for(var i=0; i<anchors.length; ++i) {
+    anchors[i].addEventListener('click', function(event) {
+      event.preventDefault();
+      message.classList.add('is-open');
+    });
+  }
+  var close_msg = document.getElementById('close-message');
+  close_msg.addEventListener('click', function(event) {
+    event.preventDefault();
+    message.classList.remove('is-open');
   });
 };
   </script>
@@ -72,5 +88,19 @@ window.onload = function() {
       </section>
     </div>
   </main>
+  <div class="message" id="message">
+    <div class="message-body">
+      <button id="close-message">Закрыть</button>
+      <h2>Это только демонстрационная страница</h2>
+      <p>Эта страница создана для демонстрации адаптивной верстки веб-страниц.
+      Все ссылки и кнопки здесь не работают.
+      </p>
+      <p>Исходный код этой страницы можно посмотреть в средствах разработчика
+      браузера, или на
+      <a href="https://raw.githack.com/alexandersolovyov/WebLayoutDemo--Roasters-adaptive_layout">GitHub</a>.
+      Файлы содержат комментарии и не сжаты.
+      </p>
+    </div>
+  </div>
 </body>
 </html>
