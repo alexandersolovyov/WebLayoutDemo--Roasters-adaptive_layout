@@ -6,6 +6,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Профессиональная техника для обжарщиков кофе</title>
   <link rel="stylesheet" type="text/css" href="main.css" />
+  <script>
+window.onload = function() {
+  var button = document.getElementById('toggle-menu');
+  button.addEventListener('click', function(event) {
+    event.preventDefault();
+    var menu = document.getElementById('main-menu');
+    menu.classList.toggle('is-open');
+  });
+};
+  </script>
 </head>
 <body>
 
@@ -62,15 +72,5 @@
       </section>
     </div>
   </main>
-  <script>
-(function() {
-  var button = document.getElementById('toggle-menu');
-  button.addEventListener('click', function(event) {
-    event.preventDefault();
-    var menu = document.getElementById('main-menu');
-    menu.classList.toggle('is-open');
-  });
-})();
-  </script>
 </body>
 </html>
