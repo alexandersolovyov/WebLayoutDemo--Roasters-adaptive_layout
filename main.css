@@ -44,6 +44,12 @@ a:active {
   padding: 0.4em 1em;
   background-color: #fff;
 }
+@media (min-width: 35em) {
+  .page-header {
+    padding: 1em;
+  }
+}
+
 .title>h1 {
   color: #333;
   text-transform: uppercase;
@@ -67,6 +73,12 @@ a:active {
   background-image: url(img/coffee_hero.jpg);
   background-size: 100%;
 }
+@media (min-width: 35em) {
+  .hero {
+    padding: 5em 3em;
+    font-size: 1.2rem;
+  }
+}
 
 /*
  * Основной раздел
@@ -74,6 +86,10 @@ a:active {
 main {
   padding: 1em;
 }
+@media (min-width: 35em) {
+  padding: 2em 1em;
+}
+
 .subtitle {
   margin-top: 1.5em;
   margin-bottom: 1.5em;
@@ -110,7 +126,6 @@ main {
   top: 0.2em;
   left: 0.2em;
 }
-
 .menu-dropdown {
   display: none;
   position: absolute;
@@ -118,6 +133,16 @@ main {
   left: 0;
   margin: 0;
 }
+@media (min-width: 35em) {
+  .menu-toggle {
+    display: none;
+  }
+  .menu-dropdown {
+    display: block;
+    position: static;
+  }
+}
+
 .menu.is-open .menu-dropdown {
   display: block;
 }
@@ -139,4 +164,38 @@ main {
   color: #fff;
   font-weight: normal;
 }
+@media (min-width: 35em) {
+  .nav-menu {
+    display: flex;
+    border: 0;
+    padding: 0 1em;
+  }
+  .nav-menu>li {
+    flex: 1;
+  }
+  .nav-menu>li+li {
+    border: 0;
+  }
+  .nav-menu>li>a {
+    padding: 0.3em;
+    text-align: center;
+  }
+}
 
+/*
+ * Для среднего размера:
+ * текст в 3 колонки,
+ * крайние поля компенсируются отрицательными значениями.
+ */
+@media (min-width: 35em) {
+  .row {
+    display: flex;
+    margin-left: -0.75em;
+    margin-right: -0.75em;
+  }
+  .column {
+    flex: 1;
+    margin-left: 0.75em;
+    margin-right: 0.75em;
+  }
+}
